@@ -1,0 +1,86 @@
+% \documentclass[draft, 12pt]{article}  % draft模式，显示图片边框，不显示图片
+\documentclass[12pt]{article}     % final模式，显示图片
+\input{Config/preamble_example}      % 导言区配置，不需要新页
+
+% \newcommand{}, \includeonly{}, \crefname{}等命令都可以放在sty文件中
+\input{Config/MyStyle.sty}        
+
+\title{Example Document}
+\author{Haipeng Yu}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\tableofcontents    % 目录
+\newpage
+
+% \include{chapter1}    % 大章节，另起一页，可单独编译
+% \include{chapter2}
+% \input{chapter1}      % 不分页，紧跟上一章节
+% \input{chapter2}
+
+\section{What's this?} % 章节
+This is an example document to demonstrate the LaTeX preamble configuration. Below is some sample text generated using the \texttt{blindtext} package.
+
+
+\section{Another Section} 
+\blindtext[2]  % 生成两段示例文本
+
+\paragraph{A Paragraph} % 段落
+Here is a paragraph with some text. You can add more paragraphs as needed.
+
+\subsection{A Subsection} % 子章节
+Here is a subsection with some text. You can add more sections and subsections as needed.
+\blindtext[1]  % 生成一段示例文本
+\subsection{B Subsection}
+Here is another subsection with some text.\blindtext[1]  % 生成一段示例文本
+
+\section{Mathematical Example}
+Here is a mathematical example:
+\[
+E = mc^2
+\]
+This equation shows the equivalence of energy and mass.
+
+\[ \frac{\diff{y}}{\diff{x}} \]
+
+\newpage
+
+\section{Including an Image}
+Here is an example of including an image:
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{example-image}
+    \caption{An example image}
+    \label{fig:example}
+\end{figure}
+
+This generates two paragraphs of placeholder text. See also \vref{fig:example}
+
+Let's see the \cref{fig:example} again on \cpageref{fig:example}.
+
+\section{Blindtext Example}
+Here is an example of using the \texttt{blindtext} package:
+\blindtext[2]
+
+\begin{figure}
+    \centering
+    \fbox{Diagram placeholder}
+    \caption{Enterprise Organizational Chart}
+    \label{fig:example2}
+\end{figure}
+This generates two paragraphs of placeholder text. See also the \vref{fig:example}.
+
+Let's see the \cref{fig:example2} again on \cpageref{fig:example2}.
+
+\section{Citing References}
+\cite{everingham_pascal_nodate} and \cite{sengupta_going_2019} are examples of citations.
+
+
+
+
+\section{References}
+\printbibliography  %显示参考文献，BibLaTeX 方式
+
+\end{document}
