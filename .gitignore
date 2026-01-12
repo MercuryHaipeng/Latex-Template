@@ -1,0 +1,16 @@
+./Build
+./Bibliography
+Bibliography/reference.bib
+Build/main.aux
+Build/main.bbl
+Build/main.bbl-SAVE-ERROR
+Build/main.bcf
+Build/main.blg
+Build/main.fdb_latexmk
+Build/main.fls
+Build/main.log
+Build/main.out
+Build/main.pdf
+Build/main.run.xml
+Build/main.synctex.gz
+Build/main.toc
