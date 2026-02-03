@@ -1,0 +1,87 @@
+% ---------- 导言开始 ----------
+% 1. 版面
+% \usepackage[a4paper,inner=1.5cm, outer=3cm, top=2cm, bottom=3cm,bindingoffset=5mm]{geometry}
+\usepackage[a4paper,margin=2.5cm]{geometry} % 统一边距2.5cm
+\usepackage[protrusion=true, expansion=true, final]{microtype} % 字体微调
+\usepackage[english]{babel}     % 美式 → May 1, 2025
+% \usepackage[british]{babel}   % 英式 → 1st May 2025
+% \usepackage[UTF8]{ctex}       % 中文 → 2025年5月1日
+\usepackage{blindtext}   % 生成示例文本
+
+
+% 2. 字体和段落
+\usepackage{newpxtext,newpxmath}    % 字体，newpxtext 是 Palatino 字体，newpxmath 是配套的数学字体
+\usepackage[onehalfspacing]{setspace}   % 1.5 倍行距
+\usepackage{parskip}        % 段落首行无缩进，间距分隔
+% Latex 默认标题后段落不缩进（section, subsection等）
+% \usepackage{indentfirst}    % 设置首段落首行缩进
+
+
+% 3. 图表和代码
+\usepackage{graphicx}       % 插入图片
+\usepackage{subcaption}     % 提供 subfigure 环境，用于子图
+\graphicspath{{Figures/}}   % 图片搜索路径
+\usepackage{diagbox}        % 生成斜线表头
+\usepackage{listings}       % 行内代码引用 \lstinline||
+\lstset{                    % 支持行内代码自动换行
+  breaklines=true,
+  breakatwhitespace=false
+  columns=fullflexible
+}
+\usepackage{xcolor}     % 代码高亮
+\lstdefinestyle{pythonstyle}{   % 定义 Python 代码风格
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    commentstyle=\color{teal},
+    stringstyle=\color{orange},
+    showstringspaces=false,
+    numbers=left,
+    numberstyle=\tiny,
+    breaklines=true,
+    frame=single,
+    captionpos=b
+}
+\lstset{style=pythonstyle}
+
+
+% 4. 公式和绘图
+\usepackage{amsmath}    % 数学公式
+\let\Bbbk\relax % 解决 amsfonts 和 newpxmath 的冲突
+\usepackage{amssymb, amsfonts} % 数学符号和字体
+\usepackage{tikz}    % 绘图
+% 在物理学中，特别是经典力学和电磁学等领域，通常使用箭头来表示向量。
+% \vec{} —— 短箭头，适合单个字母；\overrightarrow{} —— 长箭头，适合多字符。
+% 在数学、工程学以及某些应用科学领域，更倾向于使用\bm{}表示向量或矩阵。这种方式避免了箭头可能带来的视觉混乱。
+\usepackage{bm}        % 粗体数学符号
+
+
+% 5. 交叉引用
+% 交叉引用包的载入顺序如下，此载入顺序已经定义了如下命令：
+% \newcommand{\cpageref}[1]{\vpageref{#1} on page~\pageref{#1}} % 带有“on page”的页码引用
+% \vref{label} 中已经包含了 \vpageref{label}，无需再调用 \vpageref
+\usepackage[hidelinks]{hyperref}    % 生成可点击的目录, 图表等交叉引用, 需最先加载
+\usepackage[nospace]{varioref}  % 智能页码引用（如“见第3页”），需在 hyperref 后加载
+\usepackage[
+    capitalize,     % \Cref 自动生成首字母大写
+    nameinlink,     % 让“图1”整个成为可点击链接（而非仅数字）
+    noabbrev        % 不使用缩写（如用 "Figure" 而不是 "Fig."）
+]{cleveref}         % 智能引用（复数引用、范围引用等), 需在 hyperref 后加载
+\usepackage{caption} % 自定义图表标题格式，见sty文件中的设置
+% \crefname{} 命令可放入sty文件中
+% 如果通过\href{run:}链接调用其他文件，路径和文件名称必须为英文，且相对路径是指对应的PDF文件，而不是tex文件！在'run:'后面没有空格。经测试，pdf和word均可以正常调用打开。
+
+
+% 6. 参考文献
+% 采用 BibLaTeX + Biber 方式，传统的 BibTeX 方式逐渐淘汰
+\usepackage[backend=biber,style=ieee]{biblatex} % 参考文献，ieee 样式
+\addbibresource{Bibliography/reference.bib}     % 参考文献数据库文件，可放入sty文件中
+% 如果使用 BibTeX 而不是 Biber，可以使用以下两行代码
+% \bibliographystyle{alpha} % 参考文献样式
+% \bibliography{reference} % 参考文献数据库文件
+
+
+% 7. 自定义命令
+% 自定义命令，如\newcommand{cmd}{def}可以放在.sty文件中
+
+% ---------- 导言结束 ----------
