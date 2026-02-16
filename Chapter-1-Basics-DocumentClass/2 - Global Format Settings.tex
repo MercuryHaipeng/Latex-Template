@@ -1,0 +1,89 @@
+% %% 纸张方向和页边距
+% \documentclass[12pt, b5paper]{article}
+
+% \usepackage{lscape} % 纸张方向portrait(默认纵向), landscape(横向)
+% \usepackage[margin=25mm]{geometry} % 调整页边距
+
+% \begin{document}
+% Hello, LaTeXers! This is our first LaTex document.
+
+% \begin{landscape}
+% Hello, LaTeXers! This is our first LaTex document.
+% \end{landscape}
+
+% \end{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 章节标题的字体格式
+% | 编码   | 字体                        | 说明              |
+% | :----- | :------------------------- | :---------------- |
+% | `cmr`  | Computer Modern Roman      | LaTeX 默认罗马体   |
+% | `cmss` | Computer Modern Sans Serif | 默认无衬线体       |
+% | `cmtt` | Computer Modern Typewriter | 默认等宽体         |
+% | `ptm`  | Times Roman                | Times 字体        |
+% | `pvm`  | **Palatino Sans**          | Palatino 无衬线体  |
+% | `phv`  | Helvetica                  | Helvetica 字体    |
+% | `ppl`  | Palatino                   | Palatino 罗马体   |
+% | `pbk`  | Bookman                    | Bookman 字体      |
+
+% \documentclass{article}
+% \usepackage{sectsty}
+% \sectionfont{\fontfamily{phv} \fontseries{b}\fontsize{11pt}{20pt}\selectfont} % 一级标题字体格式设置
+% \subsectionfont{\fontfamily{phv}\fontseries{b}\fontsize{11pt}{20pt}\selectfont} % 二级标题字体格式设置
+% \subsubsectionfont{\fontfamily{phv}\fontseries{b}\fontsize{11pt}{20pt}\selectfont} % 三级标题字体格式设置
+% % 字体族设置为 pvm（Palatino 字体的无衬线变体）
+% % 字重（粗细）设置为 b = bold（粗体）
+% % 字号11pt，行距20pt
+
+% \title{LaTex cook-book}
+% \author{author}
+% \date{\today}   % \date{2026/02/16}
+
+% \begin{document}
+% \maketitle
+% \section{Introduction}
+% \subsection{Sub Introduction}
+% \subsubsection{Subsub Introduction}
+
+% \paragraph{PA}
+% Hello, LaTeXers! This is our first LaTex document.
+
+% \subparagraph{Pa1}
+% This document is our starting point fo learning LaTex and writing with it. It would not be difficult.
+% \end{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 生成目录
+% \setcounter{tocdepth}{0} % 目录层次仅包括\part
+% \setcounter{tocdepth}{1} % 目录层次深入到\section
+% \setcounter{tocdepth}{2} % 目录层次深入到\subsection
+% \setcounter{tocdepth}{3} % 目录层次深入到\subsubsection
+
+\documentclass[12pt]{article}
+\begin{document}
+
+% \setcounter{tocdepth}{1} 
+\tableofcontents
+
+\section{Section 1}
+\subsection{1.1}
+The text of 1.1
+\subsection{1.2}
+The text of 1.2
+\subsection{1.3}
+The text of 1.3
+
+\section{Section 2}
+\subsection{2.1}
+The text of 2.1
+\subsection{1.2}
+The text of 2.2
+\subsection{2.3}
+The text of 2.3
+
+\section*{Section 3}
+\end{document}
+
+
